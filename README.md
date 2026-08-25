@@ -1,6 +1,6 @@
 # omp-orchestration
 
-![One goal, one main orchestrator, per-engine orchestrators, heterogeneous model agents — all reporting up](assets/banner.jpg)
+![One goal. One orchestrator. Fleets of agents reporting up.](assets/banner.jpg)
 
 A **Claude Code skill** that lets your agent drive local **omp (oh-my-pi)** instances toward a goal (tested against omp 17.3.5):
 
@@ -69,4 +69,4 @@ paraphrased from docs; it was all observed, current as of the omp build of 2026-
 
 ## License
 
-MIT
+CC BY 4.0 — use it, adapt it, ship it, but **attribution is required**: credit "omp-agent-skill by Jason Brown (loktar00)" with a link back to this repo.
