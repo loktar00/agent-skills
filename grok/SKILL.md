@@ -289,3 +289,7 @@ grok -p "…" --resume <sessionId> --fork-session --output-format json --always-
 ```
 
 A fresh `-p` without `-r`/`-c` is a **new** context. Repo + NOTES.md (or equivalent) is the only memory unless you resume.
+
+> Verified gotcha (grok 1.0.5): files created by built-in skills like `/imagine` are saved under the
+> SESSION directory — `~/.grok/sessions/<url-encoded-cwd>/<session-id>/images/…` — not the working
+> directory, even with `--cwd` set. An orchestrator must fish outputs from the newest session dir.
