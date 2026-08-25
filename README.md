@@ -1,6 +1,6 @@
 # omp-orchestration
 
-![One goal. One orchestrator. Fleets of agents reporting up.](assets/banner.jpg)
+![One goal feeding the tree; its roots reach every model.](assets/banner.jpg)
 
 A **Claude Code skill** that lets your agent drive local **omp (oh-my-pi)** instances toward a goal (tested against omp 17.3.5):
 
