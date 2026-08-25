@@ -28,6 +28,28 @@ cp omp-agent-skill/SKILL.md ~/.claude/skills/omp-orchestration/
 
 Then just ask your agent to use omp — the skill loads on demand.
 
+## Engine adapters
+
+The same orchestration doctrine drives more than omp. This repo now ships engine adapters —
+**each written by the engine itself**, running headless under agent orchestration, empirically
+verifying every flag against its own installed CLI before documenting it:
+
+- **`SKILL.md`** (root) — omp (oh-my-pi), doctrine + mechanics (tested against omp 17.3.5)
+- **`codex/SKILL.md`** — OpenAI Codex CLI (`codex exec`), written by Codex itself (codex-cli 0.147.0)
+- **`grok/SKILL.md`** — xAI Grok CLI (`grok -p`), written by Grok itself (grok 1.0.5)
+
+Each adapter's `NOTES.md` is its evidence trail: which facts were verified by running commands vs.
+prior knowledge. Install any adapter the same way:
+
+```bash
+mkdir -p ~/.claude/skills/codex-orchestration && cp omp-agent-skill/codex/SKILL.md ~/.claude/skills/codex-orchestration/
+mkdir -p ~/.claude/skills/grok-orchestration  && cp omp-agent-skill/grok/SKILL.md ~/.claude/skills/grok-orchestration/
+```
+
+The engine adapters are mechanics-only; the shared orchestration doctrine (turn design,
+verification discipline, salvage, multi-lane rules) lives in the root SKILL.md — install it
+alongside whichever engine you use.
+
 ## What's in here
 
 - **`SKILL.md`** — the skill itself: the full operating guide, written *to the agent*
