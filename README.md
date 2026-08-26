@@ -28,6 +28,15 @@ cp omp-agent-skill/SKILL.md ~/.claude/skills/omp-orchestration/
 
 Then just ask your agent to use omp — the skill loads on demand.
 
+## The meta-skill: learn ANY harness
+
+**`harness-orchestration/SKILL.md`** sits above the adapters. It teaches your agent to pick the
+right harness for a job, mix harnesses across lanes — and when a harness has **no adapter yet**,
+to run the learning protocol: recon its CLI, probe headless mode live (first launches fail; the
+failures become documentation), then launch the harness ON ITSELF to write its own adapter skill,
+and verify every documented flag against the installed binary. The codex and grok adapters below
+were both produced by exactly this protocol. The set is self-extending.
+
 ## Engine adapters
 
 The same orchestration doctrine drives more than omp. This repo now ships engine adapters —
