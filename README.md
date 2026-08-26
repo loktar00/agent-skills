@@ -46,6 +46,12 @@ Because "it exited 0" is not evidence.
 | **[`test-rigor`](test-rigor/SKILL.md)** | The evidence standard for any QA: what counts as proof, baseline-before-change, paired before/after under state drift, verdicts that don't overclaim. Per-project trap files plug in under `references/` |
 | **[`perf-proof`](perf-proof/SKILL.md)** | Prove a frontend perf change with paired, measured before/after numbers: builds both git refs, serves each production build, drives a real signed-in browser N times per condition, verdict fails on regression. Per-project configs under `targets/` (`npm install` inside the skill dir for Playwright) |
 
+## Workflow
+
+| Skill | What it does |
+|---|---|
+| **[`no-agent-attribution`](no-agent-attribution/SKILL.md)** | Human-only authorship on everything git/GitHub: blocks AI co-author trailers, "generated with" footers, session links, and bot identities — with a pre-push audit and removal recipes. Auto-invoked on any commit/push/PR |
+
 ## Model selection
 
 | Skill | What it does |
