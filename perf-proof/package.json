@@ -1,0 +1,9 @@
+{
+  "name": "perf-proof",
+  "private": true,
+  "type": "module",
+  "description": "Paired before/after performance measurement harness for called-deeweb",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}

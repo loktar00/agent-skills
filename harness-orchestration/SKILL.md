@@ -54,7 +54,7 @@ never document a flag you didn't confirm against the installed binary.
    the orchestrator must compensate (external timeout, cost estimation).
 
 **Phase C — self-documentation (the harness writes its own adapter):**
-8. Scaffold a lane containing: a reference adapter (this repo's omp or grok SKILL.md) and a
+8. Scaffold a lane containing: a reference adapter (this repo's omp-orchestration or grok-orchestration SKILL.md) and a
    TASK.md from the template below.
 9. Launch the harness ON that lane with your proven incantation. It documents itself: its model
    has current knowledge of its own CLI, and — instructed properly — verifies every claim by
@@ -100,6 +100,6 @@ you could not confirm.
 ## 4. Doctrine pointer
 
 Turn design, acceptance criteria, NOTES-as-memory, hand-patch policy, salvage table, multi-lane
-git/spend discipline, cross-model bug classes: see the root `omp-orchestration` skill §2 and
+git/spend discipline, cross-model bug classes: see the `omp-orchestration` skill (sibling directory in this repo) §2 and
 §5–§8 — that doctrine is engine-agnostic and applies unchanged to every adapter this protocol
 produces.

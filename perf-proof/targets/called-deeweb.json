@@ -1,0 +1,27 @@
+{
+  "name": "called-deeweb",
+  "description": "Called web app (React + Vite PWA monorepo)",
+
+  "appPath": "apps/called-chat",
+  "buildCommand": "npm run build",
+  "distPath": "dist",
+  "defaultRoute": "/chat",
+
+  "apiHost": "api.called.app",
+  "loginPattern": "Sign in to Called|Continue with Google",
+  "loginUrl": "https://web.called.app/",
+
+  "fingerprint": {
+    "authSource": "firebase-indexeddb",
+    "apiBase": "https://api.called.app",
+    "endpoints": [
+      { "key": "channels", "path": "/v1/channel?limit=1000" },
+      { "key": "entities", "path": "/v1/entity" }
+    ]
+  },
+
+  "notes": [
+    "Run npm run test and npm run lint from the REPO ROOT, never from apps/called-chat.",
+    "The build script runs clean:sync first, which regenerates packages/called-api from the OpenAPI spec."
+  ]
+}
