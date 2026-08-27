@@ -37,6 +37,17 @@ built the full animated 3D scene **blind**:
 
 ![Seven models, one brief, one original](assets/benchmark-grid.png)
 
+## Asset generation
+
+Drive a local ComfyUI box headlessly — textures, sound effects, music — with the graphs verified
+rather than guessed.
+
+| Skill | What it does |
+|---|---|
+| **[`comfyui`](comfyui/SKILL.md)** | The engine: API-format graphs (UI-format workflows are NOT postable), the full endpoint surface, the **discovery protocol** for learning an unfamiliar model by pulling its shipped template, and the failure modes — including the wrong-VAE class that produces garbage with **no error at all**. Reference runner in `templates/comfy_gen.py` |
+| **[`comfyui-krea2`](comfyui-krea2/SKILL.md)** | Krea2 images (~6 s at 1024²): the verified graph, and why it is *not* a FLUX model — wrong text encoder errors loudly, wrong VAE fails silently |
+| **[`comfyui-audio`](comfyui-audio/SKILL.md)** | Stable Audio SFX/ambience (~6 s per 4 s clip) + ACE-Step music: verified graph, the checkpoint-has-no-CLIP trap, and SFX prompting that sits in a game mix |
+
 ## Verification & QA
 
 Because "it exited 0" is not evidence.
