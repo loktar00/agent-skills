@@ -93,6 +93,19 @@ different text encoders, VAEs and latent nodes, and guessing wastes far more tim
    error to be diagnosed, not a retry.
 5. **Polling too eagerly** — the id appears in `/history` only once queued/complete; poll every ~2 s
    with a timeout, and surface the elapsed time.
+6. **A silent poll loop turns a failed submit into a fake hang.** If the request never reaches the
+   server, `/history/{id}` simply never contains the id and a quiet loop waits out its whole timeout
+   looking exactly like slow generation. A 600 s-per-image timeout across a five-image batch cost us
+   **40 minutes of an agent turn** with nothing on screen, and the server was healthy the entire time
+   (40 jobs in history, 0 errored). Three cheap defences, all of which you want:
+   - **Print progress while polling** — elapsed plus queue depth, every ~10 s.
+   - **Check `GET /queue`.** Empty queue plus nothing in `/history` means the job was never
+     submitted. Fail immediately with that message; retrying identically will stall identically.
+   - **Size the timeout to reality.** Normal 1024² generation is seconds, so ~180 s is generous.
+     Long timeouts do not buy reliability, they buy invisible dead time.
+
+   Diagnostic order when a generation "hangs": `/queue` (was it submitted?) → `/history/{id}`
+   `status_str` (did it fail?) → only then suspect the server.
 
 ## 5. Job runner (working reference)
 
